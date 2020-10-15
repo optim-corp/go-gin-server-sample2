@@ -1,0 +1,15 @@
+.gitignore
+.travis.yml
+docs
+docs/*
+.openapi-generator
+.openapi-generator/*
+git_push.sh
+go.mod
+go.sum
+api
+api_*
+client.go
+configuration.go
+response.go
+README.md

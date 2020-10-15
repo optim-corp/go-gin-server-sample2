@@ -1,0 +1,49 @@
+openapi: 3.0.1
+info:
+  title: title
+  version: 1.0.0
+paths:
+  '/sample/point/{pathParam1}':
+    get:
+      tags:
+        - api1
+      operationId: getSamplePoint
+      parameters:
+        - $ref: '#/components/parameters/pathParam1'
+        - $ref: '#/components/parameters/queryParam1'
+      responses:
+        '200':
+          description: Pointの取得成功
+          content:
+            application/json: 
+              schema:
+                $ref: '#/components/schemas/SampleArray'
+        '400':
+          description: 不正なリクエストです。
+        '401':
+          description: 認証エラーです。
+
+components:
+  parameters:
+    pathParam1: 
+      in: path
+      name: param1
+      schema:
+        type: string
+      required: true
+    queryParam1:
+      in: query
+      name: param2
+      schema:
+        type: string
+      required: false
+  schemas:
+    SampleArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/SampleResponse'
+    SampleResponse:
+      type: object
+      properties:
+        value:
+          type: string

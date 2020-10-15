@@ -1,0 +1,9 @@
+api
+go/model_*
+go/utils.go
+go/routers.go
+go.sum
+.idea/*
+.openapi-generator/*
+go/.openapi-generator/*
+**.exe
